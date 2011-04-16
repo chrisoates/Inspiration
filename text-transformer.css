@@ -1,0 +1,246 @@
+/* 
+	Filename: text-transformer.css
+ 	Created April 9, 2011 by Chris Oates
+*/
+
+/* CSS ANIMATION OPTIONS */
+
+@-webkit-keyframes dropin {
+	0% {
+		top:-900px;
+	}
+	30% {
+		top:80px;
+	}
+	80%{
+		top:80px;
+	}
+	100% {
+		top:900px;
+	}
+}
+
+@-webkit-keyframes fadein {
+	0% {
+		opacity:0;
+	}
+	40%{
+		opacity:1;
+	}
+	100% {
+		opacity:1;
+	}
+}
+
+@-webkit-keyframes slidein {
+	0% {
+		left:-900px;
+	}
+	30% {
+		left:100px;
+	}
+	80%{
+		left:100px;
+	}
+	100% {
+		left:900px;
+	}
+}
+
+@-webkit-keyframes slidestop {
+	0% {
+		left:-900px;
+	}
+	100%{
+		left:100px;
+	}
+}
+
+
+@-webkit-keyframes rotatein {
+	0% {
+		-webkit-transform-origin:-100px -100px;  
+		 -webkit-transform: rotate(90deg);
+	}
+	5% {
+		 -webkit-transform: rotate(0deg);  
+	}
+	90%{
+	 	-webkit-transform: rotate(0deg);  
+	}
+	100% {
+		-webkit-transform-origin:1000px 0;  
+		-webkit-transform: rotate(-90deg);  
+	}	
+}
+
+@-webkit-keyframes fill {
+	0% {
+	 	-webkit-transform: scale(1.0, 1.0);
+	}
+	65%{
+	 	-webkit-transform: scale(1.0, 1.0);
+		line-height:85px;
+	}
+	100% {
+	 	-webkit-transform: scale(10.0, 10.0);
+		line-height:600px;
+	}	
+}
+
+@-webkit-keyframes ending {
+	0% {
+		background:#fff;
+	}
+	100% {
+		background:#222;
+	}
+}
+
+/* STYLES */
+
+* {
+	margin: 0;
+    padding: 0;
+}
+
+body{
+	text-align:center;
+}
+
+/* Final end animation */
+
+body.end{
+	-webkit-animation-name: fill;
+	-webkit-animation-duration: 5s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+div#container{
+	margin:50px auto;
+}
+
+div#main{
+	width:800px;
+	height:600px;
+	overflow:hidden;
+	position:relative;
+}
+
+p{
+	left:-1999px;
+	font-family:Helvetica;
+	font-size:80px;
+	position:absolute;
+	top:100px;
+	max-width:800px;
+	-webkit-transition:left 1.0s ease-in;
+}
+
+p.visible{
+	display:block;
+	left:20%;
+}
+ 
+p#p1{
+	-webkit-animation-name: fill;
+	-webkit-animation-duration: 5s;
+		-webkit-animation-iteration-count: 1;
+	-webkit-animation-direction: alternate;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+p#p2.visible{
+	-webkit-animation-name: rotatein;
+	-webkit-animation-duration: 7.5s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+	-webkit-transform-origin:1000px 0;  
+	-webkit-transform: rotate(-90deg);
+}
+
+p#p3{
+	-webkit-transform-origin:0 0;  
+	 -webkit-transform: scale(0.2, 0.2);  
+	 -webkit-transition:-webkit-transform 0.5s ease-in-out;
+}
+
+p#p3.visible{
+ 	-webkit-transform: scale(1.0, 1.0);
+}
+
+p#p6.visible{
+	-webkit-animation-name: dropin;
+	-webkit-animation-duration: 3s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+p#p5.visible{
+	height:90px;
+	overflow:hidden;
+	-webkit-animation-name: slidein;
+	-webkit-animation-duration: 5s;
+		-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+p#p6.visible{
+	-webkit-animation-duration: 5s;
+}
+p#p4.visible, 
+p#p7.visible{
+	-webkit-animation-name: fadein;
+	-webkit-animation-duration: 5s;
+		-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+}
+
+p#p4.visible{
+	-webkit-animation-duration: 5s;	
+}
+
+p#p8.visible{
+	-webkit-animation-name: slidestop;
+	-webkit-animation-duration: 3s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;	
+	left:100px;
+}
+
+span{
+	color:#fff;
+	-webkit-transition:color 0.5s ease-in;
+}
+
+span.active{
+	color:#222;
+}
+
+span em{
+	font-family:Georgia;
+	font-size:82px;
+	-webkit-transition:all 1.0s ease-in;
+}
+span.active em{
+	color:#777;
+	color:#e15ed9;
+}
+
+span strong{
+	color:#efefef;
+	-webkit-transition:all 1.0s ease-in;	
+}
+
+span.active strong{
+	color:#93e15e;
+}
+
+body.end{
+	-webkit-animation-name: ending;
+	-webkit-animation-duration: 2s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-timing-function: ease-in-out;
+	background:#222;
+}

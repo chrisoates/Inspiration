@@ -1,0 +1,19 @@
+Inspiration
+===========
+This is a text animator which uses javascript and CSS3 transformations and transitions to 'read out' text in a conversational style.
+
+Basics
+======
+The javascript 'paginates' the paragraphs and displays each span after a delay specified by the value of its 'class'
+
+eg 	<span class="2">text</span> will display after a delay of 2 seconds
+	<span class="4">text</span> will display after a delay of 4 seconds
+	
+Displaying is actually done by colouring the text, it's not actually hidden, it's just white.
+
+You have to adjust the animation-duration depending on how many spans and their display delays contained within the paragraph. More spans will require the animation-duration to be extended to match.
+
+Notes
+=====
+Webkit browsers only.
+Noticed that sometimes the first run isn't perfect but after that it's fine.
