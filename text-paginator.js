@@ -1,32 +1,31 @@
 // Filename: textpaginator.js
 // Created April 9, 2011 by Chris Oates
+// Updated April 20, 2011 by Chris Oates
 
 var tp = {
 	init: function(){
-		tp.pMax = $('p').length;
-		tp.pCounter++;
+		tp.sections= $('p');
 		tp.animateParagraph();
 	},
 	
+	sections:'',
+	
 	pCounter:0,
-	pMax:0,
 	intervalID:0,
 	
 	changeParagraph: function(){
-		if( tp.pCounter == tp.pMax ){
+		if( tp.pCounter == tp.sections.length-1 ){
 			clearInterval(tp.intervalID);
 			$('body').addClass("end");
 			return;
 		}
-		
-		$('#p'+ tp.pCounter).removeClass('visible');
+		$(tp.sections[tp.pCounter]).removeClass('visible');
 		tp.pCounter++;
-		tp.animateParagraph();
-		
+		tp.animateParagraph();		
 	},
 	
 	animateParagraph: function(){
-		var currPara = $('#p' + tp.pCounter);
+		var currPara = $(tp.sections[tp.pCounter]);
 		var baseLagTime = 1000;
 		var spans = currPara.children('span');
 		currPara.addClass('visible');

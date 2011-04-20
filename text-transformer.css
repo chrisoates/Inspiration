@@ -1,7 +1,7 @@
 /* 
 	Filename: text-transformer.css
  	Created April 9, 2011 by Chris Oates
- 	Updated April 17, 2011 by Chris Oates
+ 	Updated April 20, 2011 by Chris Oates
 */
 
 /* CSS ANIMATION OPTIONS */
@@ -144,50 +144,45 @@ p.visible{
 	left:20%;
 }
  
-p#p1{	
+p.fill{	
 	-webkit-animation: fill 6s ease-in-out;
 }
 
-p#p2.visible{
+p.rotate.visible{
 	-webkit-animation: rotatein 7.5s ease-in-out;
 	-webkit-transform-origin:1000px 0;  
 	-webkit-transform: rotate(-90deg);
 }
 
-p#p3{
+p.scale{
 	-webkit-transform-origin:0 0;  
  	-webkit-transform:scale(0.2, 0.2);  
 	-webkit-transition:-webkit-transform 0.5s ease-in-out;
 }
 
-p#p3.visible{
+p.scale.visible{
  	-webkit-transform: scale(1.0, 1.0);
 }
 
-p#p6.visible{
+p.drop.visible{
 	-webkit-animation: dropin 3s ease-in-out;
 	
 }
 
-p#p5.visible{
+p.slide.visible{
 	height:90px;
 	overflow:hidden;
 	-webkit-animation: slidein 5s normal ease-in-out;
 }
 
-p#p6.visible{
+p.drop.visible{
 	-webkit-animation-duration: 5s;
 }
-p#p4.visible, 
-p#p8.visible{
+p.fadein.visible{
 	-webkit-animation: fadein 5s normal ease-in-out;
 }
 
-p#p4.visible{
-	-webkit-animation-duration: 5s;	
-}
-
-p#p9.visible{
+p.slidestop.visible{
 	-webkit-animation: slidestop 3s normal ease-in-out;
 	left:100px;
 }
